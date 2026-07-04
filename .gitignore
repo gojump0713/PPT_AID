@@ -1,0 +1,4 @@
+tools/node_modules/
+tools/media-used.json
+Thumbs.db
+.DS_Store

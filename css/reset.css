@@ -1,0 +1,8 @@
+/* reset.css — minimal reset for presentation stage */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img, video, canvas, svg { display: block; max-width: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+table { border-collapse: collapse; border-spacing: 0; }
+:focus-visible { outline: 2px solid var(--color-accent, #00e5ff); outline-offset: 2px; }
