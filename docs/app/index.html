@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Native Campus — Interactive Presentation</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%2305070f'/%3E%3Ccircle cx='8' cy='8' r='4.5' fill='none' stroke='%2300e5ff' stroke-width='1.6'/%3E%3Ccircle cx='8' cy='8' r='1.6' fill='%2300e5ff'/%3E%3C/svg%3E"/>
+<script>document.documentElement.classList.remove('no-js');</script>
+  <script type="module" crossorigin src="./assets/index-CKTVJzT3.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-kbTa2BVl.css">
+</head>
+<body>
+<div id="app">
+  <div id="stage-wrap">
+    <div id="stage"></div>
+  </div>
+
+  <header id="hud-top">
+    <div id="hud-section"></div>
+    <button id="btn-overview" aria-label="전체 목차 열기 (O)">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+        <rect x="1" y="1" width="6" height="6" rx="1.4" fill="currentColor"/>
+        <rect x="9" y="1" width="6" height="6" rx="1.4" fill="currentColor" opacity=".55"/>
+        <rect x="1" y="9" width="6" height="6" rx="1.4" fill="currentColor" opacity=".55"/>
+        <rect x="9" y="9" width="6" height="6" rx="1.4" fill="currentColor" opacity=".3"/>
+      </svg>
+      <span>Overview</span>
+    </button>
+  </header>
+
+  <footer id="hud-bottom">
+    <div id="hud-page"></div>
+    <div id="progress-track"><div id="progress-bar"></div></div>
+    <div id="hud-timer" title="발표 경과 시간 · R로 리셋">00:00</div>
+  </footer>
+
+  <div class="kbd-hint"><kbd>→</kbd> 다음 &nbsp;·&nbsp; <kbd>O</kbd> 목차 &nbsp;·&nbsp; <kbd>F</kbd> 전체화면 &nbsp;·&nbsp; <kbd>N</kbd> 노트</div>
+
+  <div id="overview" hidden>
+    <div id="overview-head">
+      <h2>Journey Map</h2>
+      <p>클릭 또는 방향키 + Enter로 이동 · ESC로 닫기</p>
+    </div>
+    <svg id="overview-journey" aria-hidden="true"></svg>
+    <div id="overview-grid" role="listbox" aria-label="전체 장면 목차"></div>
+  </div>
+
+  <div id="notes-modal" hidden></div>
+  <div id="blackout" hidden></div>
+  <div id="goto-box" hidden></div>
+</div>
+</body>
+</html>

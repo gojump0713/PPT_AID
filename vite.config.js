@@ -4,7 +4,7 @@ export default defineConfig({
   // relative base: works on GitHub Pages subpath AND any local static server
   base: './',
   build: {
-    outDir: 'docs',
+    outDir: 'docs/app',
     emptyOutDir: true,
     assetsInlineLimit: 8192,
     chunkSizeWarningLimit: 900,
