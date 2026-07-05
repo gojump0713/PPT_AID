@@ -1,0 +1,50 @@
+/* tokens.css — design tokens + local fonts */
+:root {
+  /* color */
+  --c-bg: #05070f;
+  --c-bg-2: #0a0e1d;
+  --c-surface: rgba(255, 255, 255, 0.06);
+  --c-surface-2: rgba(255, 255, 255, 0.1);
+  --c-line: rgba(255, 255, 255, 0.12);
+  --c-primary: #4f7cff;
+  --c-violet: #7c5cff;
+  --c-accent: #00e5ff;
+  --c-green: #37d0a0;
+  --c-amber: #f4b53f;
+  --c-danger: #ff5c7a;
+  --c-text: #f4f7ff;
+  --c-muted: rgba(228, 236, 255, 0.6);
+  --c-dim: rgba(228, 236, 255, 0.38);
+
+  /* typography */
+  --f-display: 'A2Z', 'NanumSquareNeo', sans-serif;
+  --f-body: 'NanumSquareNeo', sans-serif;
+  --fs-hero: 88px;
+  --fs-title: 72px;
+  --fs-head: 56px;
+  --fs-sub: 34px;
+  --fs-body: 28px;
+  --fs-small: 22px;
+  --fs-tiny: 17px;
+
+  /* spacing */
+  --sp-xs: 8px; --sp-sm: 16px; --sp-md: 32px; --sp-lg: 64px; --sp-xl: 120px;
+
+  /* motion */
+  --m-fast: 0.3s;
+  --m-normal: 0.8s;
+  --m-slow: 1.4s;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* glow */
+  --glow-accent: 0 0 24px rgba(0, 229, 255, 0.45), 0 0 80px rgba(0, 229, 255, 0.15);
+  --glow-primary: 0 0 24px rgba(79, 124, 255, 0.45), 0 0 80px rgba(79, 124, 255, 0.15);
+}
+
+@font-face { font-family: 'NanumSquareNeo'; src: url('../assets/fonts/NanumSquareNeo-bRg.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'NanumSquareNeo'; src: url('../assets/fonts/NanumSquareNeo-cBd.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'NanumSquareNeo'; src: url('../assets/fonts/NanumSquareNeo-dEb.ttf') format('truetype'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'NanumSquareNeo'; src: url('../assets/fonts/NanumSquareNeo-eHv.ttf') format('truetype'); font-weight: 900; font-display: swap; }
+@font-face { font-family: 'A2Z'; src: url('../assets/fonts/A2Z-Regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'A2Z'; src: url('../assets/fonts/A2Z-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'A2Z'; src: url('../assets/fonts/A2Z-ExtraBold.otf') format('opentype'); font-weight: 800; font-display: swap; }

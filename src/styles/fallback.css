@@ -1,0 +1,23 @@
+/* fallback.css — content-first degradation for low-power / WebGL-less environments */
+body.low-power .scene__canvas,
+body.no-webgl .hero-canvas { display: none; }
+
+body.low-power .scene::after { display: none; } /* drop noise layer */
+body.low-power #hud-section,
+body.low-power #btn-overview,
+body.low-power #overview,
+body.low-power #notes-modal { backdrop-filter: none; }
+body.low-power #overview { background: rgba(4, 6, 13, 0.95); }
+body.low-power .glass, body.low-power .card { backdrop-filter: none; }
+
+/* WebGL fallback gradient behind hero/closing */
+.hero-fallback {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(900px 600px at 50% 42%, rgba(79, 124, 255, 0.22), transparent 65%),
+    radial-gradient(600px 420px at 68% 30%, rgba(0, 229, 255, 0.12), transparent 60%),
+    radial-gradient(700px 520px at 30% 68%, rgba(124, 92, 255, 0.16), transparent 62%);
+}
+
+/* if JS fails entirely, first scene stays visible with plain content */
+.no-js .scene:first-child { visibility: visible; }

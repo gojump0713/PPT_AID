@@ -1,0 +1,45 @@
+/* animations.css — keyframes & transition helpers (transform/opacity only) */
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes dashFlow {
+  to { stroke-dashoffset: -40; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes ringPulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.float { animation: floatY 6s ease-in-out infinite; }
+.pulse { animation: pulseGlow 2.6s ease-in-out infinite; }
+.spin-slow { animation: spinSlow 40s linear infinite; }
+.flow-line { stroke-dasharray: 8 8; animation: dashFlow 1.6s linear infinite; }
+
+.type-caret::after {
+  content: '▌';
+  color: var(--c-accent);
+  animation: blink 0.9s step-start infinite;
+}
+
+/* reduced motion: quiet everything */
+@media (prefers-reduced-motion: reduce) {
+  .float, .pulse, .spin-slow, .flow-line { animation: none !important; }
+}
+body.reduced-motion .float,
+body.reduced-motion .pulse,
+body.reduced-motion .spin-slow,
+body.reduced-motion .flow-line { animation: none !important; }

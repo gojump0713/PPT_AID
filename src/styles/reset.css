@@ -1,0 +1,9 @@
+/* reset.css */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img, video, canvas, svg { display: block; max-width: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+ul, ol { list-style: none; }
+:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 3px; border-radius: 4px; }
+::selection { background: rgba(0, 229, 255, 0.3); }

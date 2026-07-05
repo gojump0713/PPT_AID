@@ -1,0 +1,107 @@
+/* layout.css — 16:9 stage + scene grid systems */
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--f-body);
+}
+
+#app { position: fixed; inset: 0; }
+
+#stage-wrap {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(1100px 700px at 70% -10%, rgba(79, 124, 255, 0.08), transparent 60%),
+    radial-gradient(900px 600px at 10% 110%, rgba(124, 92, 255, 0.07), transparent 60%),
+    var(--c-bg);
+}
+#stage {
+  position: relative;
+  width: 1920px; height: 1080px;
+  flex: none;
+  transform-origin: center center;
+}
+
+/* scenes */
+.scene {
+  position: absolute; inset: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 90px 120px 110px;
+  display: flex; flex-direction: column;
+}
+.scene.active { visibility: visible; }
+
+/* generative background layers inside each scene */
+.scene::before {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1000px 620px at 78% 8%, rgba(79, 124, 255, 0.1), transparent 62%),
+    radial-gradient(760px 520px at 12% 92%, rgba(124, 92, 255, 0.09), transparent 60%);
+}
+.scene::after { /* micro noise */
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* common scene skeleton */
+.scene__kicker {
+  position: relative; z-index: 2;
+  font-family: var(--f-display);
+  font-size: var(--fs-tiny);
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--sec-color, var(--c-accent));
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 30px;
+}
+.scene__kicker::before {
+  content: '';
+  width: 44px; height: 2px;
+  background: var(--sec-color, var(--c-accent));
+  box-shadow: 0 0 12px var(--sec-color, var(--c-accent));
+}
+.scene__headline {
+  position: relative; z-index: 2;
+  font-family: var(--f-display);
+  font-size: var(--fs-head);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  white-space: pre-line;
+  margin-bottom: 22px;
+}
+.scene__body {
+  position: relative; z-index: 2;
+  font-size: var(--fs-body);
+  color: var(--c-muted);
+  line-height: 1.5;
+  max-width: 1100px;
+}
+.scene__stage {
+  position: relative; z-index: 2;
+  flex: 1;
+  min-height: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.scene__canvas {
+  position: absolute; inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* accent word inside headlines */
+.hl {
+  color: var(--c-accent);
+  text-shadow: var(--glow-accent);
+}
+.hl--violet { color: var(--c-violet); text-shadow: var(--glow-primary); }
+.hl--danger { color: var(--c-danger); text-shadow: 0 0 24px rgba(255, 92, 122, 0.4); }
+.hl--green { color: var(--c-green); text-shadow: 0 0 24px rgba(55, 208, 160, 0.4); }

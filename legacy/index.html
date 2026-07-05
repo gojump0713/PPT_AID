@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<base href="../"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Native Campus — Interactive Presentation</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%2300ab89'/%3E%3Ctext x='8' y='12' font-size='10' text-anchor='middle' fill='white' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E"/>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/tokens.css"/>
+<link rel="stylesheet" href="css/layout.css"/>
+<link rel="stylesheet" href="css/components.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+<link rel="stylesheet" href="css/fallback.css"/>
+</head>
+<body>
+<div id="app">
+  <!-- 16:9 stage: 1920x1080 design space, letterbox-fitted via transform scale -->
+  <div id="stage-wrap">
+    <div id="stage">
+      <div id="slides"></div>
+      <canvas id="fx-canvas" width="1920" height="1080"></canvas>
+    </div>
+  </div>
+
+  <!-- presenter HUD -->
+  <header id="hud-top">
+    <div id="hud-section"></div>
+    <button id="btn-overview" title="전체 목차 (O)" aria-label="전체 목차 열기">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="7" height="7" rx="1.5" fill="currentColor"/>
+        <rect x="10" y="1" width="7" height="7" rx="1.5" fill="currentColor" opacity=".6"/>
+        <rect x="1" y="10" width="7" height="7" rx="1.5" fill="currentColor" opacity=".6"/>
+        <rect x="10" y="10" width="7" height="7" rx="1.5" fill="currentColor" opacity=".35"/>
+      </svg>
+      <span>목차</span>
+    </button>
+  </header>
+  <footer id="hud-bottom">
+    <div id="hud-page"></div>
+    <div id="progress-track"><div id="progress-bar"></div></div>
+    <div id="hud-timer" title="발표 경과 시간 (R로 리셋)">00:00</div>
+  </footer>
+
+  <!-- overview mode -->
+  <div id="overview" hidden>
+    <div id="overview-head">
+      <h2>전체 목차</h2>
+      <p>클릭 또는 방향키+Enter로 이동 · ESC로 닫기</p>
+    </div>
+    <div id="overview-grid" role="listbox" aria-label="슬라이드 목차"></div>
+  </div>
+
+  <!-- blackout -->
+  <div id="blackout" hidden></div>
+
+  <!-- goto indicator (number + Enter) -->
+  <div id="goto-box" hidden></div>
+</div>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/content.js"></script>
+<script src="js/performance.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/overview.js"></script>
+<script src="js/speaker-notes.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
